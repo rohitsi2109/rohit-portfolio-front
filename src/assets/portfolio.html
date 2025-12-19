@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Rohit Singh</title>
+	<link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/2633b0e32b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="rohit_logo.png"  class="logo" >
+                <ul id="sidemenu">
+                    <li> <a href="#header">Home</a> </li>
+                    <li> <a href="#about">About</a> </li>
+                    <li> <a href="#services">Services</a> </li>
+                    <li> <a href="#projests">Projects</a> </li>
+                    <li> <a href="#contact">Contact</a> </li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Software Engineer</p>
+                <h1>Hi I'm <span> Rohit Singh</span></h1>
+             </div>
+        </div>
+    </div>
+    <!-- --------------About------------- -->
+    <div id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col-1">
+                        <img src="resume.png">
+                    </div>
+                    <div class="about-col-2">
+                        <h1 class="sub-title"> <span> About </span> Me </h1>
+                        <p>Enthusiastic engineering graduate with good knowledge in coding and design.Proficient in python, R Arduino and microcontrollers. Ability to learn new software and technologies quickly. 
+                        Capability to work in teams by providing valuable support.</p>
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                            <p class="tab-links" onclick="opentab('education')">Achivments</p>
+                        </div>
+                        <div class="tab-contents active-tab" id="skills" >   <!---Skills-->
+                            <ul>
+                                <li><span>Programming Language</span> <br> Python <br> C++ | Embadded <br> Java | Android <br> HTML <br> CSS <br> JavaScript <br> MySQL </li>
+                                <li><span>Technologies | Frameworks</span> <br> OpenCV <br> Scikit_Learn <br> Django <br> TenserFlow <br> MQTT  </li>
+                                <li><span>Software’s</span> <br> Adobe Photoshop <br> Adobe Illustrator <br> Label Image  </li>
+                                <li><span>Microcontroller Boards</span> <br> Arduino <br> Esp32 | Esp8622 <br> Raspberry Pi  </li>
+
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="experience">    <!---Experience-->
+                            <ul>
+                                <li><span>Industry Automation Engineer Intern | Livwize IoT Solutions Smart Industrial Automation India (R&D), Noida</span> <br> Developed a 6-Node device for power monitoring in homes and industries as part of a collaborative team effort.
+Successfully created a precise Ohm meter to meet client specifications.
+Conceptualized, designed, and independently developed a prototype for a smart environmental monitoring device, showcasing
+innovation and initiative. </li>
+                                <li><span>Research Publication | 46th (Inter) National System Conference </span> <br> Under the Academic Projects section, you will find a reference to the paper on Plant Disease Detection with Bluetooth
+Controlled Rover Project. Notably, this paper received recognition as the best paper in the Agroecology-cum-Precision Farming
+Systems category.  </li>
+                                <li><span>Research Publication | 45th (Inter) National Systems Conferenc</span> <br> The research was based on value-based education and several solutions was provided to deploy value-based education in higher
+studies.  </li>
+                                <li><span>Internship with college | Dayalbagh Educational Institute (2020 – Present)</span> <br> As an intern on a pollution control project utilizing water mist, my primary responsibility was to monitor air quality. I was
+enrolled in the Learn and Earn program. </li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="education">    <!---Education-->
+                            <ul>
+                                <li><span>Best Paper Award | 46th (Inter) National System Conference</span> <br>Received the prestigious Best Paper Award in the Agroecology-cum-Precision Farming Systems category, outshining approximately 400 other papers in the same category. </li>
+                                <li><span>Poster Presentation | 45th (Inter) National System Conference</span> <br> Accomplished the honor of Poster Presentation and publication in the highly competitive Value-Based Education category, surpassing approximately 2600 submitted papers.</li>
+                                <li><span>Smart India Hackathon 2023</span> <br> Successfully completed an internal hackathon, earning the opportunity to participate in the final showdown</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+    </div>
+    <!-- ---------------Services------------- -->
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">My <span>Services</span> </h1>
+            <div class="services-list">
+                <div>
+                    <i class="fa-brands fa-python"></i>
+                    <h2>Python Developer</h2>
+                    <p> Python Developer with extensive experience in developing and maintaining high-performance software applications. Proficient in utilizing Python and related frameworks to create efficient, scalable, and maintainable solutions. Strong problem-solving skills and a commitment to writing clean and modular code. Proven ability to collaborate effectively in cross-functional teams, contributing to the full software development lifecycle. Adept at staying current with industry trends and continuously enhancing skills to deliver cutting-edge solutions.</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-brain"></i>
+                    <h2>Machine Learning</h2>
+                    <p> Machine learning is a subset of AI that focuses on creating systems that can learn and improve from experience without being explicitly programmed. It involves the development of algorithms and statistical models that enable computers to perform tasks or make predictions based on patterns and data. Supervised learning, unsupervised learning, and reinforcement learning are common approaches within machine learning.</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-microchip"></i>
+                    <h2>Embadded Systems</h2>
+                    <p> Experienced Embedded Engineer proficient in C and C++, specializing in the design and implementation of embedded systems. Strong background in microcontroller programming and hardware-software integration. Adept at collaborating with cross-functional teams across diverse industries, contributing to the entire product development lifecycle. Demonstrated ability to create innovative solutions for a range of applications, from consumer electronics to automotive systems.</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>FrontEnd Development</h2>
+                    <p>Frontend Developer with a passion for crafting visually appealing and user-friendly web interfaces. Proficient in HTML, CSS, and JavaScript, with expertise in modern frontend frameworks such as React or Vue.js. Experienced in translating design concepts into responsive and dynamic web applications. Strong collaboration skills, working seamlessly with UX/UI designers and backend developers to deliver seamless and engaging user experiences. Dedicated to staying updated on emerging technologies and best practices in frontend development.</p>
+                    <a href="#">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ---------------Projects-------------- -->
+    <div id="projests">
+        <div class="container">
+            <h1 class="sub-title"><span>My</span> Projects</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="plant.png" >
+                    <div class="layer">
+                        <h3>Plant Disease Detection with Bluetooth Controlled Rover</h3>
+                        <p>Spearheaded an initiative focused on enhancing agricultural productivity and sustainability. Developed a pioneering solution for farmers that enables disease identification in crops and delivers actionable solutions via WhatsApp. I was the team leader in a collaborative group project, I assumed the primary responsibility of training and implementing the machine learning model in Raspberry Pi, while also overseeing and executing leadership duties.</p>
+                        <a href="https://github.com/rohitsi2104/self_agri_dis_detc"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="singlanguage.png" >
+                    <div class="layer">
+                        <h3>Indian Sign Language Recognition</h3>
+                        <p>I conceptualized this project aimed at addressing communication barriers between individuals with hearing impairments or speech difficulties and the general population. The core idea involved capturing real-time videos of individuals using sign language, and employing a machine learning model to instantaneously translate these signs into English. </p>
+                        <a href="https://github.com/rohitsi2104/ISL"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="robo.png" >
+                    <div class="layer">
+                        <h3>Four legged bot</h3>
+                        <p>A spider-shaped, four-legged robot equipped with a live feed camera and Bluetooth control. This was specifically engineered for military and surveillance applications in challenging disaster-stricken environments where human access is limited. The robot operates on an Android platform and is remotely controlled via a smartphone.</p>
+                        <a href="https://github.com/rohitsi2104/Four-legged-servillance-bot"><i class="fa-brands fa-github"></i></a>
+                    </div>  
+                </div>
+                <div class="work">
+                    <img src="drone.png" >
+                    <div class="layer">
+                        <h3>Agriculture Drone</h3>
+                        <p>Designed an autonomous agriculture drone featuring capabilities for plant disease and animal detection, with the added functionality of alert generation. Implemented both manual and automated surveillance modes for enhanced operational flexibility.</p>
+                        <a href="#"><i class="fa-brands fa-github"></i></a>
+                    </div>  
+                </div>
+            </div>
+            <a href="https://github.com/rohitsi2104?tab=repositories" class="btn">See more</a>
+        </div>
+    </div>
+    <!-- ------------------------Contact----------------------- -->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact <span>Me</span></h1>
+                    <p><i class="fa-solid fa-envelope"></i> rohitsi2104@gmail.com</p>
+                    <p><i class="fa-solid fa-mobile"></i> 8335811533</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/rohitsingh2106"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/rohitsi2106/?igshid=OGQ5ZDc2ODk2ZA%3D%3D"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/rohit-singh-283bb7243/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com/rohitsi2104"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <a href="resume.pdf" download class="btn btn2">Download CV</a>
+                    </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your name" required>
+                        <input type="email" name="e-mail" placeholder="Your e-mail" required>
+                        <input type="text" name="Phone number" placeholder="Your phone number">
+                        <textarea name="Message" rows="6" placeholder="Your Message" ></textarea>
+                        <button type="submit" class="btn btn3" >Submit</button>
+                    </form>
+                    <span id="msg"> </span>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyrght © Rohit Singh. Made for Personal Portfolio</p>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+    <script type="text/javascript">
+        var sidemeu = document.getElementById("sidemenu");
+
+        function openmenu(){
+            sidemeu.style.right = "0";
+        }
+        function closemenu(){
+            sidemeu.style.right = "-200";
+        }
+    </script>
+    <script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwB3twP32ubgi8MPa4mS5WFFysHn1X6poH0NknLA-_qZ1z-oF2vY85FFnnme8aPHJ03wg/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+  const msg = document.getElementById("msg")
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        msg.innerHTML = "Message Sent Successfully"
+        setTimeout(function(){
+            msg.innerHTML = ""
+        },1000)
+        form.reset()
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background Container matches bg-primary/10 and border-primary/20 -->
+    <rect x="2" y="2" width="60" height="60" rx="12" fill="#00d4ff" fill-opacity="0.1" stroke="#00d4ff" stroke-opacity="0.2" stroke-width="4"/>
+    
+    <!-- Terminal Icon (Simple >_) matches text-primary -->
+    <path d="M18 22L30 32L18 42" stroke="#00d4ff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M34 42H46" stroke="#00d4ff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Rohit Singh - Senior Software Engineer Resume</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00d4ff",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#0f2023",
+                        "card-light": "#ffffff",
+                        "card-dark": "#173036",
+                        "text-main-light": "#0d121b",
+                        "text-main-dark": "#e7ebf3",
+                        "text-secondary-light": "#4c669a",
+                        "text-secondary-dark": "#94a3b8",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "body": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        @media print {
+            @page {
+                size: A4;
+                margin: 0;
+            }
+
+            body {
+                width: 210mm;
+                height: 297mm;
+                background-color: white !important;
+                color: black !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                margin: 0 auto;
+                padding: 10mm;
+                /* Add padding to content inside the A4 sheet from edge */
+                box-sizing: border-box;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .dark-mode-only {
+                display: none !important;
+            }
+
+            .page-break {
+                page-break-before: always;
+            }
+
+            a {
+                text-decoration: none !important;
+                color: black !important;
+            }
+
+            /* Reset max-width for print to use full A4 width */
+            main {
+                max-width: none !important;
+                padding: 0 !important;
+                gap: 1.5rem !important;
+                /* Reduce gaps for print */
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-text-main-light dark:text-text-main-dark font-body min-h-screen flex flex-col transition-colors duration-200">
+    <!-- Top Navigation -->
+    <nav
+        class="sticky top-0 z-50 w-full bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-[#e7ebf3] dark:border-gray-800 transition-colors no-print">
+        <div class="max-w-[960px] mx-auto px-4 md:px-10">
+            <div class="flex items-center justify-between h-16">
+                <a class="flex items-center gap-2 group" href="/">
+                    <div
+                        class="size-8 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center text-primary">
+                        <span class="material-symbols-outlined text-[20px]">terminal</span>
+                    </div>
+                    <h2 class="text-lg font-bold tracking-tight font-display">RS<span class="text-primary">.DEV</span>
+                    </h2>
+                </a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a class="text-sm font-medium hover:text-primary transition-colors"
+                        href="#experience">Experience</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#projects">Projects</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#skills">Skills</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#contact">Contact</a>
+                </div>
+                <button onclick="window.print()" class="md:hidden p-2 text-primary">
+                    <span class="material-symbols-outlined">download</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- Main Content -->
+    <main class="flex-grow w-full max-w-[960px] mx-auto px-4 md:px-10 py-10 flex flex-col gap-10">
+        <!-- Hero Section -->
+        <section class="flex flex-col gap-6 animate-fade-in" id="contact">
+            <div class="flex flex-wrap justify-between gap-6 items-start">
+                <div class="flex flex-col gap-2 max-w-2xl">
+                    <h1
+                        class="text-4xl md:text-5xl font-black tracking-tight text-text-main-light dark:text-white font-display">
+                        Rohit Singh
+                    </h1>
+                    <p class="text-xl md:text-2xl text-primary font-medium font-display">
+                        Senior Software Engineer
+                    </p>
+                    <div class="flex items-center gap-2 text-text-secondary-light dark:text-text-secondary-dark mt-1">
+                        <span class="material-symbols-outlined text-[18px]">location_on</span>
+                        <span class="text-sm">Noida, India</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-text-secondary-light dark:text-text-secondary-dark">
+                        <span class="material-symbols-outlined text-[18px]">mail</span>
+                        <a href="mailto:rohitsi2104@gmail.com"
+                            class="text-sm hover:text-primary transition-colors">rohitsi2104@gmail.com</a>
+                    </div>
+                    <div class="flex items-center gap-2 text-text-secondary-light dark:text-text-secondary-dark">
+                        <span class="material-symbols-outlined text-[18px]">call</span>
+                        <span class="text-sm">+91 8335811533</span>
+                    </div>
+                </div>
+                <div class="flex gap-3 no-print">
+                    <a class="flex items-center justify-center size-10 rounded-full bg-white dark:bg-card-dark border border-gray-200 dark:border-gray-700 hover:border-primary hover:text-primary transition-all shadow-sm"
+                        href="https://linkedin.com/in/rohit-singh-83b6521b4" target="_blank" title="LinkedIn">
+                        <span class="material-symbols-outlined text-[20px]">group</span>
+                    </a>
+                    <a class="flex items-center justify-center size-10 rounded-full bg-white dark:bg-card-dark border border-gray-200 dark:border-gray-700 hover:border-primary hover:text-primary transition-all shadow-sm"
+                        href="https://github.com/rohitsingh" target="_blank" title="GitHub">
+                        <span class="material-symbols-outlined text-[20px]">code</span>
+                    </a>
+                    <a class="flex items-center justify-center size-10 rounded-full bg-white dark:bg-card-dark border border-gray-200 dark:border-gray-700 hover:border-primary hover:text-primary transition-all shadow-sm"
+                        href="mailto:rohitsi2104@gmail.com" title="Email">
+                        <span class="material-symbols-outlined text-[20px]">mail</span>
+                    </a>
+                </div>
+            </div>
+            <div
+                class="prose dark:prose-invert max-w-none text-text-secondary-light dark:text-text-secondary-dark text-base leading-relaxed">
+                Software Engineer focused on <strong>developer tooling, backend services, and scalable
+                    architecture</strong>. Currently driving engineering at EXL Service, owning flagship VS Code
+                extensions and secure code execution engines. Specialized in building reliable systems using Python,
+                TypeScript, and Docker.
+            </div>
+        </section>
+        <hr class="border-gray-200 dark:border-gray-800" />
+        <!-- Experience Section -->
+        <section class="flex flex-col gap-6" id="experience">
+            <div class="flex items-center gap-3">
+                <div class="p-2 bg-primary/10 rounded-lg text-primary">
+                    <span class="material-symbols-outlined">work</span>
+                </div>
+                <h2 class="text-2xl font-bold tracking-tight font-display">Experience</h2>
+            </div>
+            <div class="flex flex-col gap-8">
+                <!-- Job 1 -->
+                <div
+                    class="group relative pl-8 border-l-2 border-gray-200 dark:border-gray-800 hover:border-primary transition-colors">
+                    <div
+                        class="absolute -left-[9px] top-0 size-4 rounded-full bg-white dark:bg-background-dark border-2 border-gray-300 dark:border-gray-600 group-hover:border-primary transition-colors">
+                    </div>
+                    <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-2">
+                        <div>
+                            <h3 class="text-lg font-bold text-text-main-light dark:text-white">Senior Executive –
+                                Software Engineer</h3>
+                            <div class="text-primary font-medium">EXL Service</div>
+                        </div>
+                        <span
+                            class="text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full mt-2 sm:mt-0 w-fit">2025
+                            - Present</span>
+                    </div>
+                    <ul
+                        class="list-disc list-outside ml-4 space-y-2 text-text-secondary-light dark:text-text-secondary-dark text-sm leading-relaxed">
+                        <li>Promoted for owning end-to-end delivery of the flagship <strong>CodeHarbor VS Code
+                                plugin</strong> and execution service.</li>
+                        <li>Architected secure code execution workflows involving analysis, conversion, and lineage
+                            tracking for legacy systems (SAS/COBOL to Python/Java).</li>
+                        <li>Managed stakeholder communication and led technical demos for enterprise clients.</li>
+                    </ul>
+                </div>
+                <!-- Job 2 -->
+                <div
+                    class="group relative pl-8 border-l-2 border-gray-200 dark:border-gray-800 hover:border-primary transition-colors">
+                    <div
+                        class="absolute -left-[9px] top-0 size-4 rounded-full bg-white dark:bg-background-dark border-2 border-gray-300 dark:border-gray-600 group-hover:border-primary transition-colors">
+                    </div>
+                    <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-2">
+                        <div>
+                            <h3 class="text-lg font-bold text-text-main-light dark:text-white">Associate – Software
+                                Engineer</h3>
+                            <div class="text-primary font-medium">EXL Service</div>
+                        </div>
+                        <span
+                            class="text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full mt-2 sm:mt-0 w-fit">2024
+                            - 2025</span>
+                    </div>
+                    <ul
+                        class="list-disc list-outside ml-4 space-y-2 text-text-secondary-light dark:text-text-secondary-dark text-sm leading-relaxed">
+                        <li>Built and enhanced developer productivity tools supporting batch operations for code
+                            analysis.</li>
+                        <li>Implemented REST APIs for backend service integration, improving system modularity.</li>
+                    </ul>
+                </div>
+                <!-- Job 3 -->
+                <div
+                    class="group relative pl-8 border-l-2 border-gray-200 dark:border-gray-800 hover:border-primary transition-colors">
+                    <div
+                        class="absolute -left-[9px] top-0 size-4 rounded-full bg-white dark:bg-background-dark border-2 border-gray-300 dark:border-gray-600 group-hover:border-primary transition-colors">
+                    </div>
+                    <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-2">
+                        <div>
+                            <h3 class="text-lg font-bold text-text-main-light dark:text-white">Industry Automation
+                                Engineer Intern</h3>
+                            <div class="text-primary font-medium">Livwize IoT Solutions</div>
+                        </div>
+                        <span
+                            class="text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full mt-2 sm:mt-0 w-fit">2023
+                            - 2024</span>
+                    </div>
+                    <ul
+                        class="list-disc list-outside ml-4 space-y-2 text-text-secondary-light dark:text-text-secondary-dark text-sm leading-relaxed">
+                        <li>Developed 6-node power monitoring IoT devices for industrial automation.</li>
+                        <li>Designed and prototyped smart environmental monitoring systems using ESP32 and MQTT.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- Projects Section -->
+        <section class="flex flex-col gap-6" id="projects">
+            <div class="flex items-center gap-3">
+                <div class="p-2 bg-primary/10 rounded-lg text-primary">
+                    <span class="material-symbols-outlined">rocket_launch</span>
+                </div>
+                <h2 class="text-2xl font-bold tracking-tight font-display">Key Projects</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Project 1 -->
+                <div
+                    class="bg-card-light dark:bg-card-dark rounded-xl border border-gray-200 dark:border-gray-800 p-6 flex flex-col gap-4">
+                    <div class="flex justify-between items-start">
+                        <div
+                            class="size-10 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400">
+                            <span class="material-symbols-outlined">extension</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-text-main-light dark:text-white mb-2">CodeHarbor VS Code
+                            Extension</h3>
+                        <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">
+                            A comprehensive developer tool for file-level code analysis, conversion, and lineage
+                            tracking. Features batch operations and real-time status updates via WebViews.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mt-auto pt-2">
+                        <span
+                            class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium text-gray-600 dark:text-gray-300 rounded">TypeScript</span>
+                        <span
+                            class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium text-gray-600 dark:text-gray-300 rounded">VS
+                            Code API</span>
+                        <span
+                            class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium text-gray-600 dark:text-gray-300 rounded">HTML/CSS</span>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div
+                    class="bg-card-light dark:bg-card-dark rounded-xl border border-gray-200 dark:border-gray-800 p-6 flex flex-col gap-4">
+                    <div class="flex justify-between items-start">
+                        <div
+                            class="size-10 rounded-lg bg-teal-100 dark:bg-teal-900/30 flex items-center justify-center text-teal-600 dark:text-teal-400">
+                            <span class="material-symbols-outlined">security</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-text-main-light dark:text-white mb-2">Secure Code Execution
+                            Service</h3>
+                        <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">
+                            Docker-based sandboxed environment for executing code safely. Features isolation, dependency
+                            pre-bundling, and custom runtime support for Java 17 and Python.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mt-auto pt-2">
+                        <span
+                            class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium text-gray-600 dark:text-gray-300 rounded">Docker</span>
+                        <span
+                            class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium text-gray-600 dark:text-gray-300 rounded">Python</span>
+                        <span
+                            class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium text-gray-600 dark:text-gray-300 rounded">FastAPI</span>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div
+                    class="bg-card-light dark:bg-card-dark rounded-xl border border-gray-200 dark:border-gray-800 p-6 flex flex-col gap-4">
+                    <div class="flex justify-between items-start">
+                        <div
+                            class="size-10 rounded-lg bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-400">
+                            <span class="material-symbols-outlined">smart_toy</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-text-main-light dark:text-white mb-2">Autonomous API Testing
+                            Agent</h3>
+                        <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">
+                            Agent-based endpoint testing system (AtomicAgent/AutoGen Core v2) that autonomously
+                            generates payloads, executes against APIs, and compares responses.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mt-auto pt-2">
+                        <span
+                            class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium text-gray-600 dark:text-gray-300 rounded">AutoGen</span>
+                        <span
+                            class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium text-gray-600 dark:text-gray-300 rounded">AI
+                            Agents</span>
+                        <span
+                            class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium text-gray-600 dark:text-gray-300 rounded">Python</span>
+                    </div>
+                </div>
+                <!-- Project 4 -->
+                <div
+                    class="bg-card-light dark:bg-card-dark rounded-xl border border-gray-200 dark:border-gray-800 p-6 flex flex-col gap-4">
+                    <div class="flex justify-between items-start">
+                        <div
+                            class="size-10 rounded-lg bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600 dark:text-green-400">
+                            <span class="material-symbols-outlined">agriculture</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-text-main-light dark:text-white mb-2">Plant Disease Detection
+                            Rover</h3>
+                        <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">
+                            Created a Bluetooth-controlled rover using Raspberry Pi to identify crop diseases via ML and
+                            guide farmers via WhatsApp API. Won Best Paper Award.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mt-auto pt-2">
+                        <span
+                            class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium text-gray-600 dark:text-gray-300 rounded">IoT</span>
+                        <span
+                            class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium text-gray-600 dark:text-gray-300 rounded">ML/CV</span>
+                        <span
+                            class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium text-gray-600 dark:text-gray-300 rounded">Raspberry
+                            Pi</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Skills Section -->
+        <section class="flex flex-col gap-6" id="skills">
+            <div class="flex items-center gap-3">
+                <div class="p-2 bg-primary/10 rounded-lg text-primary">
+                    <span class="material-symbols-outlined">handyman</span>
+                </div>
+                <h2 class="text-2xl font-bold tracking-tight font-display">Technical Skills</h2>
+            </div>
+            <div class="bg-card-light dark:bg-card-dark rounded-xl border border-gray-200 dark:border-gray-800 p-6">
+                <div class="space-y-6">
+                    <div>
+                        <h3
+                            class="text-sm font-semibold text-text-secondary-light dark:text-text-secondary-dark uppercase tracking-wider mb-3">
+                            Languages</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-3 py-1.5 bg-primary/10 text-primary text-sm font-semibold rounded-lg">Python</span>
+                            <span
+                                class="px-3 py-1.5 bg-primary/10 text-primary text-sm font-semibold rounded-lg">TypeScript</span>
+                            <span
+                                class="px-3 py-1.5 bg-primary/10 text-primary text-sm font-semibold rounded-lg">Java</span>
+                            <span class="px-3 py-1.5 bg-primary/10 text-primary text-sm font-semibold rounded-lg">Dart
+                                (Flutter)</span>
+                            <span
+                                class="px-3 py-1.5 bg-primary/10 text-primary text-sm font-semibold rounded-lg">SQL</span>
+                            <span class="px-3 py-1.5 bg-primary/10 text-primary text-sm font-semibold rounded-lg">C++
+                                (Arduino)</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3
+                            class="text-sm font-semibold text-text-secondary-light dark:text-text-secondary-dark uppercase tracking-wider mb-3">
+                            Backend & Cloud</h3>
+                        <span
+                            class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-text-main-light dark:text-white text-sm font-medium rounded-lg">AWS
+                            Cognito</span>
+                        <span
+                            class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-text-main-light dark:text-white text-sm font-medium rounded-lg">AWS
+                            ECS</span>
+                        <span
+                            class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-text-main-light dark:text-white text-sm font-medium rounded-lg">Docker</span>
+                        <span
+                            class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-text-main-light dark:text-white text-sm font-medium rounded-lg">Azure
+                            OAuth 2.0</span>
+                        <span
+                            class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-text-main-light dark:text-white text-sm font-medium rounded-lg">Cloudflare</span>
+                    </div>
+                </div>
+                <div>
+                    <h3
+                        class="text-sm font-semibold text-text-secondary-light dark:text-text-secondary-dark uppercase tracking-wider mb-3">
+                        Tools & AI</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-text-main-light dark:text-white text-sm font-medium rounded-lg">VS
+                            Code API</span>
+                        <span
+                            class="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-text-main-light dark:text-white text-sm font-medium rounded-lg">RAG/Agents</span>
+                        <span
+                            class="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-text-main-light dark:text-white text-sm font-medium rounded-lg">OpenCV</span>
+                        <span
+                            class="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-text-main-light dark:text-white text-sm font-medium rounded-lg">TensorFlow</span>
+                        <span
+                            class="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-text-main-light dark:text-white text-sm font-medium rounded-lg">Git</span>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <!-- Footer -->
+        <footer class="mt-10 pt-6 border-t border-gray-200 dark:border-gray-800 text-center pb-20 md:pb-6">
+            <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">
+                © 2024 Rohit Singh. Built with React & Clean Code.
+            </p>
+        </footer>
+    </main>
+    <!-- Floating Action Button for Download -->
+    <button
+        class="fixed bottom-6 right-6 z-40 flex items-center gap-2 bg-primary hover:bg-cyan-400 text-background-dark font-bold px-6 py-3 rounded-full shadow-neon hover:shadow-neon-sm transition-transform hover:scale-105 no-print"
+        onclick="window.print()">
+        <span class="material-symbols-outlined text-[20px]">download</span>
+        <span class="text-sm">Download PDF</span>
+    </button>
+</body>
+
+</html>
