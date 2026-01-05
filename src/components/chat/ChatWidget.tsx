@@ -113,7 +113,7 @@ const ChatWidget = () => {
             const msgId = (Date.now() + 1).toString();
             setMessages((prev: Message[]) => [...prev, {
                 id: msgId,
-                text: "Sorry, I'm having trouble connecting to the brain. Make sure the Python backend is running on port 8000.",
+                text: "I'm currently unable to connect to my knowledge base. Please try again in a moment or reach out via the contact section.",
                 sender: 'bot'
             }]);
             setTypingMessageId(msgId);
