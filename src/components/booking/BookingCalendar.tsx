@@ -1,4 +1,6 @@
 import { useEffect, useState, type FormEvent } from 'react';
+import PhoneInput from './PhoneInput';
+import { guessCountry, toE164 } from './phoneCountries';
 
 type Slots = Record<string, string[]>;
 type SlotsResult = { key: string; slots: Slots; error: string | null };
@@ -53,7 +55,7 @@ const BookingCalendar = () => {
     const [selectedDate, setSelectedDate] = useState<string | null>(null);
     const [selectedSlot, setSelectedSlot] = useState<string | null>(null);
     const [step, setStep] = useState<'pick' | 'details' | 'done'>('pick');
-    const [form, setForm] = useState({ name: '', email: '', notes: '' });
+    const [form, setForm] = useState({ name: '', email: '', phoneCountry: guessCountry(visitorTimeZone), phone: '', notes: '' });
     const [submitting, setSubmitting] = useState(false);
     const [submitError, setSubmitError] = useState<string | null>(null);
     const [booking, setBooking] = useState<Booking | null>(null);
@@ -116,7 +118,14 @@ const BookingCalendar = () => {
             const res = await fetch('/api/book', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ ...form, start: selectedSlot, timeZone }),
+                body: JSON.stringify({
+                    name: form.name,
+                    email: form.email,
+                    phone: toE164(form.phoneCountry, form.phone),
+                    notes: form.notes,
+                    start: selectedSlot,
+                    timeZone,
+                }),
             });
             const data = await res.json();
             if (!res.ok) throw new Error(data?.error || 'Booking failed. Please try another time.');
@@ -289,6 +298,16 @@ const BookingCalendar = () => {
                         <label className="flex flex-col gap-2">
                             <span className="text-sm text-gray-300">Work email *</span>
                             <input required type="email" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} className={inputClass} placeholder="jane@company.com" autoComplete="email" />
+                        </label>
+                        <label className="flex flex-col gap-2 sm:col-span-2">
+                            <span className="text-sm text-gray-300">Phone / WhatsApp *</span>
+                            <PhoneInput
+                                country={form.phoneCountry}
+                                number={form.phone}
+                                onCountryChange={phoneCountry => setForm({ ...form, phoneCountry })}
+                                onNumberChange={phone => setForm({ ...form, phone })}
+                                inputClass={inputClass}
+                            />
                         </label>
                     </div>
                     <label className="flex flex-col gap-2">
