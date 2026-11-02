@@ -35,7 +35,11 @@ export async function POST(request: Request) {
             username,
             eventTypeSlug,
             attendee: { name, email, timeZone, language: 'en' },
-            ...(notes && { bookingFieldsResponses: { notes } }),
+            // "title" is a required booking field on the event type ("What is this meeting about?")
+            bookingFieldsResponses: {
+                title: `Project scope call with ${name}`,
+                ...(notes && { notes }),
+            },
             metadata: { source: 'portfolio' },
         }),
     });
