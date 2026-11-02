@@ -36,10 +36,16 @@ const Projects = () => {
     return (
         <section id="projects" className="py-20 px-4 md:px-10 max-w-[1280px] mx-auto">
             <div className="flex flex-col gap-12">
-                <div className="flex flex-col gap-4 text-right md:text-left md:flex-row md:items-center">
-                    <div className="h-px bg-white/10 flex-grow hidden md:block"></div>
-                    <h2 className="text-4xl md:text-5xl font-bold text-white font-display">Innovation Pillars</h2>
-                    <div className="h-px bg-white/10 flex-grow md:hidden"></div>
+                <div className="flex flex-col gap-4">
+                    <div className="flex items-center gap-4">
+                        <h2 className="text-4xl md:text-5xl font-bold text-white font-display">
+                            Engineering <span className="text-primary">Highlights</span>
+                        </h2>
+                        <div className="h-px bg-white/10 flex-grow"></div>
+                    </div>
+                    <p className="text-gray-400 text-lg max-w-2xl">
+                        Complex systems I've built in enterprise and research settings, the depth I bring to every client project.
+                    </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

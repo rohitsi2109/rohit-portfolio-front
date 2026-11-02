@@ -1,73 +1,82 @@
+import plantDiseasePdf from '../../assets/paper/plantDiseaseDetection.pdf';
+
 const Experience = () => {
-    const jobs = [
+    const background = [
         {
-            company: 'EXL Service',
-            role: 'Senior Executive - Software Engineer',
-            period: '2025 – Present',
-            description: 'Promoted for ownership and delivery of key engineering initiatives. Owning VS Code extension architecture and Code Execution Service. Leading execution on large projects and supporting client demos.',
-            tags: ['VS Code API', 'Backend Architecture', 'Leadership']
+            icon: 'work',
+            title: 'Software Engineer, Clairlabs',
+            period: '2026 – Present',
+            description: 'Building production software at Clairlabs.'
         },
         {
-            company: 'EXL Service',
-            role: 'Associate - Software Engineer',
-            period: '2024 – 2025',
-            description: 'Built developer productivity systems for code operations. Worked across backend and tooling layers using REST integrations and scalable design patterns.',
-            tags: ['Python', 'REST APIs', 'Developer Tools']
+            icon: 'work_history',
+            title: 'Software Engineer (promoted to Senior), EXL Service',
+            period: '2024 – 2026',
+            description: 'Built enterprise developer tools: a VS Code extension for code analysis and conversion, a sandboxed code execution service, and AI agents for automated API testing.'
         },
         {
-            company: 'Livwize IoT Solutions',
-            role: 'Industry Automation Engineer Intern (R&D)',
+            icon: 'memory',
+            title: 'IoT & Automation R&D, Livwize IoT Solutions',
             period: 'Internship',
-            description: 'Developed a 6-node power monitoring device and a precise Ohm meter. Designed and prototyped a smart environmental monitoring device.',
-            tags: ['IoT', 'Embedded Systems', 'R&D']
+            description: 'Designed and prototyped power and environmental monitoring devices, bridging hardware and software.'
+        }
+    ];
+
+    const recognition = [
+        {
+            icon: 'trophy',
+            title: 'Best Paper Award',
+            description: '46th (Inter) National Systems Conference, chosen from ~400 entries for an ML-powered plant disease detection rover.',
+            link: plantDiseasePdf,
+            linkText: 'Read Paper'
         },
         {
-            company: 'Dayalbagh Educational Institute',
-            role: 'Intern (Learn & Earn Program)',
-            period: '2020 – Present',
-            description: 'Worked on a pollution control project using water mist, focused on air quality monitoring and reporting.',
-            tags: ['Environmental Tech', 'Monitoring']
+            icon: 'menu_book',
+            title: 'Journal Publication',
+            description: 'Co-authored "Smart Crop Health Monitoring System" in the PARITANTRA Journal of Systems Science and Engineering (2024).',
+            link: 'https://drive.google.com/file/d/1nC9MXT64wMintgBSDqZBV3C-mNifskSV/view?usp=drive_link',
+            linkText: 'View Journal'
         }
     ];
 
     return (
-        <section id="experience" className="py-20 px-4 md:px-10 max-w-[1280px] mx-auto">
+        <section id="background" className="py-20 px-4 md:px-10 max-w-[1280px] mx-auto">
             <div className="flex flex-col gap-12">
                 <div className="flex flex-col gap-4">
                     <div className="flex items-center gap-4">
-                        <h2 className="text-4xl md:text-5xl font-bold text-white font-display">Experience</h2>
+                        <h2 className="text-4xl md:text-5xl font-bold text-white font-display">Background</h2>
                         <div className="h-px bg-white/10 flex-grow"></div>
                     </div>
                     <p className="text-gray-400 text-lg max-w-2xl">
-                        My professional journey in software engineering, from R&D in IoT to building enterprise developer tools.
+                        The enterprise engineering experience behind every client project.
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 gap-6">
-                    {jobs.map((job, index) => (
-                        <div
-                            key={index}
-                            className="glass-panel p-8 rounded-xl flex flex-col md:flex-row gap-6 hover:border-primary/30 transition-all duration-300 group"
-                        >
-                            <div className="flex-shrink-0 md:w-48 flex flex-col">
-                                <span className="text-primary font-bold text-lg">{job.company}</span>
-                                <span className="text-gray-500 text-sm font-mono mt-1">{job.period}</span>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    {background.map(item => (
+                        <div key={item.title} className="glass-panel p-6 rounded-xl flex gap-4">
+                            <span className="material-symbols-outlined text-2xl text-primary">{item.icon}</span>
+                            <div className="flex flex-col gap-2">
+                                <h3 className="text-lg font-bold text-white font-display">{item.title}</h3>
+                                <span className="text-gray-500 text-sm font-mono">{item.period}</span>
+                                <p className="text-gray-400 text-sm leading-relaxed">{item.description}</p>
                             </div>
-
-                            <div className="flex-grow flex flex-col gap-4">
-                                <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors">
-                                    {job.role}
-                                </h3>
-                                <p className="text-gray-300 leading-relaxed font-body">
-                                    {job.description}
-                                </p>
-                                <div className="flex flex-wrap gap-2 mt-2">
-                                    {job.tags.map(tag => (
-                                        <span key={tag} className="px-3 py-1 bg-white/5 rounded-full text-xs text-primary/80 border border-primary/10">
-                                            {tag}
-                                        </span>
-                                    ))}
-                                </div>
+                        </div>
+                    ))}
+                    {recognition.map(item => (
+                        <div key={item.title} className="glass-panel p-6 rounded-xl flex gap-4">
+                            <span className="material-symbols-outlined text-2xl text-primary">{item.icon}</span>
+                            <div className="flex flex-col gap-2">
+                                <h3 className="text-lg font-bold text-white font-display">{item.title}</h3>
+                                <p className="text-gray-400 text-sm leading-relaxed">{item.description}</p>
+                                <a
+                                    href={item.link}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="inline-flex items-center gap-1 text-sm font-bold text-primary hover:text-white transition-colors"
+                                >
+                                    {item.linkText} <span className="material-symbols-outlined text-sm">arrow_outward</span>
+                                </a>
                             </div>
                         </div>
                     ))}

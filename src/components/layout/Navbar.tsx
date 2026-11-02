@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { useBooking } from '../booking/BookingContext';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { openBooking } = useBooking();
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -38,13 +40,13 @@ const Navbar = () => {
     };
 
     const navLinks = [
-        { name: 'About', href: '#experience' },
-        { name: 'Clients', href: '#clients' },
+        { name: 'Work', href: '#clients' },
         { name: 'Services', href: '#services' },
+        { name: 'Process', href: '#process' },
         { name: 'Projects', href: '/projects' },
+        { name: 'FAQ', href: '#faq' },
         { name: 'Contact', href: '#contact' },
     ];
-
     return (
         <header className="fixed top-0 left-0 right-0 z-50 glass-panel border-b-0 transition-all duration-300">
             <div className="max-w-[1280px] mx-auto px-4 sm:px-10 py-4 flex items-center justify-between">
@@ -76,13 +78,13 @@ const Navbar = () => {
 
                 {/* Actions */}
                 <div className="flex items-center gap-4">
-                    <a
-                        href="/resume.html"
-                        target="_blank"
-                        className="hidden sm:flex h-9 px-4 items-center justify-center rounded-lg border border-primary/30 text-primary text-sm font-bold hover:bg-primary/10 transition-colors font-body shadow-neon-sm"
+                    <button
+                        onClick={openBooking}
+                        className="hidden sm:flex h-9 px-4 items-center justify-center gap-2 rounded-lg bg-primary text-background-dark text-sm font-bold hover:shadow-neon-sm transition-all font-body"
                     >
-                        Resume
-                    </a>
+                        <span className="material-symbols-outlined text-base">calendar_month</span>
+                        Book a Call
+                    </button>
 
                     {/* Mobile Menu Button */}
                     <button
@@ -112,13 +114,14 @@ const Navbar = () => {
                             {link.name}
                         </button>
                     ))}
-                    <a
-                        href="/resume.html"
-                        target="_blank"
-                        className="mt-8 px-8 py-3 rounded-full border border-primary/30 text-primary font-bold text-lg hover:bg-primary/10 transition-colors"
+
+                    <button
+                        onClick={() => { setIsMenuOpen(false); openBooking(); }}
+                        className="mt-4 flex items-center gap-2 px-8 py-3 rounded-full bg-primary text-background-dark font-bold text-lg font-display shadow-neon"
                     >
-                        Get Resume
-                    </a>
+                        <span className="material-symbols-outlined">calendar_month</span>
+                        Book a Call
+                    </button>
 
                     {/* Close Button specific to overlay */}
                     <button
