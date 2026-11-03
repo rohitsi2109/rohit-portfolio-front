@@ -1,6 +1,9 @@
 import { useEffect, useState, type FormEvent } from 'react';
+import { Link } from 'react-router-dom';
 import PhoneInput from './PhoneInput';
 import { guessCountry, toE164 } from './phoneCountries';
+import { API_URL, CONSENT_VERSION } from '../../lib/api';
+import { getAttribution } from '../../lib/attribution';
 
 type Slots = Record<string, string[]>;
 type SlotsResult = { key: string; slots: Slots; error: string | null };
@@ -55,7 +58,8 @@ const BookingCalendar = () => {
     const [selectedDate, setSelectedDate] = useState<string | null>(null);
     const [selectedSlot, setSelectedSlot] = useState<string | null>(null);
     const [step, setStep] = useState<'pick' | 'details' | 'done'>('pick');
-    const [form, setForm] = useState({ name: '', email: '', phoneCountry: guessCountry(visitorTimeZone), phone: '', notes: '' });
+    // "website" is a honeypot: hidden from people, filled in by bots
+    const [form, setForm] = useState({ name: '', email: '', phoneCountry: guessCountry(visitorTimeZone), phone: '', notes: '', website: '' });
     const [submitting, setSubmitting] = useState(false);
     const [submitError, setSubmitError] = useState<string | null>(null);
     const [booking, setBooking] = useState<Booking | null>(null);
@@ -69,7 +73,7 @@ const BookingCalendar = () => {
     useEffect(() => {
         let cancelled = false;
         const query = new URLSearchParams({ start: rangeStart, end: monthEnd, timeZone });
-        fetch(`/api/slots?${query}`)
+        fetch(`${API_URL}/v1/slots?${query}`)
             .then(async res => {
                 const data = await res.json();
                 if (!res.ok) throw new Error(data?.error);
@@ -115,16 +119,20 @@ const BookingCalendar = () => {
         setSubmitting(true);
         setSubmitError(null);
         try {
-            const res = await fetch('/api/book', {
+            const res = await fetch(`${API_URL}/v1/bookings`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     name: form.name,
                     email: form.email,
                     phone: toE164(form.phoneCountry, form.phone),
+                    phoneCountry: form.phoneCountry,
                     notes: form.notes,
                     start: selectedSlot,
                     timeZone,
+                    consentVersion: CONSENT_VERSION,
+                    attribution: getAttribution(),
+                    honeypot: form.website,
                 }),
             });
             const data = await res.json();
@@ -314,6 +322,10 @@ const BookingCalendar = () => {
                         <span className="text-sm text-gray-300">What would you like to build?</span>
                         <textarea rows={4} maxLength={2000} value={form.notes} onChange={e => setForm({ ...form, notes: e.target.value })} className={inputClass} placeholder="A few lines about your business, the project and any deadline." />
                     </label>
+                    <label aria-hidden="true" className="absolute -left-[9999px] w-px h-px overflow-hidden">
+                        Website
+                        <input tabIndex={-1} autoComplete="off" name="website" value={form.website} onChange={e => setForm({ ...form, website: e.target.value })} />
+                    </label>
                     {submitError && <p className="text-red-400 text-sm">{submitError}</p>}
                     <button
                         type="submit"
@@ -323,6 +335,11 @@ const BookingCalendar = () => {
                         <span className={`material-symbols-outlined ${submitting ? 'animate-spin' : ''}`}>{submitting ? 'progress_activity' : 'event_available'}</span>
                         {submitting ? 'Booking…' : 'Confirm Booking'}
                     </button>
+                    <p className="text-xs text-gray-500 leading-relaxed max-w-xl">
+                        By booking, you agree that I store the details above to arrange and follow up on this call,
+                        as described in the{' '}
+                        <Link to="/privacy" target="_blank" className="text-gray-300 underline hover:text-primary">privacy policy</Link>.
+                    </p>
                 </form>
             )}
 

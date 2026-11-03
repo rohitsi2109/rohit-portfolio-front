@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const Footer = () => {
     return (
         <footer className="bg-background-dark border-t border-white/5 py-8 relative z-20 mt-auto">
@@ -9,6 +11,9 @@ const Footer = () => {
                     <p className="text-gray-500 text-sm font-normal font-body">
                         © {new Date().getFullYear()} · Websites, mobile apps & AI for businesses in Australia, Singapore & worldwide.
                     </p>
+                    <Link to="/privacy" className="text-gray-500 text-sm font-body hover:text-primary transition-colors">
+                        Privacy policy
+                    </Link>
                 </div>
 
                 <div className="flex gap-6">

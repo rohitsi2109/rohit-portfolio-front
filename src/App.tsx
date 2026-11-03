@@ -2,6 +2,7 @@
 import Layout from './components/layout/Layout';
 import Home from './pages/Home';
 import AllProjects from './pages/AllProjects';
+import Privacy from './pages/Privacy';
 import BookingProvider from './components/booking/BookingProvider';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/projects" element={<AllProjects />} />
+            <Route path="/privacy" element={<Privacy />} />
           </Routes>
         </Layout>
       </BookingProvider>
